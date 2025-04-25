@@ -11,6 +11,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Button from "@mui/material/Button";
+import { FaArrowLeft } from "react-icons/fa";
 
 const JobList = () => {
   const [jobs, setJobs] = useState([]);
@@ -53,7 +54,13 @@ const JobList = () => {
         gap:"20px"
       }}
     >
+       <Box display="flex" style={{alignItems:'center',gap:'20px'}}>
+        <FaArrowLeft
+                  style={{ cursor: "pointer" }}
+                  onClick={() => navigate(-1)}
+                />
       <Button onClick={() => navigate("/create-job")} variant="contained" color="success" style={{borderRadius:"20px"}}>Create New Job</Button>
+      </Box>
       <Paper
         elevation={3}
         sx={{

@@ -11,6 +11,7 @@ import {
   MenuItem,
   Box,
 } from "@mui/material";
+import { FaArrowLeft } from "react-icons/fa";
 
 const categories = [
   "Sales & Marketing",
@@ -66,6 +67,12 @@ const JobForm = ({ isEdit }) => {
 
   return (
     <Box sx={{ maxWidth: 600, mx: "auto", mt: 5 }}>
+     
+       <FaArrowLeft
+                        style={{ cursor: "pointer",marginBottom:'15px' }}
+                        onClick={() => navigate(-1)}
+                      />
+                    
       {errorMessage && (
         <Typography variant="body1" color="error" sx={{ mb: 2 }}>
           {errorMessage}
